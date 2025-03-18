@@ -1,11 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} Modifier un souhait {% endblock %}
+
 {% block body %}
-
-{% endblock %}
-
-{% block title %}
-{{ form_start(wishForm) }}
+    {{ form_start(wishForm) }}
     {{ form_widget(wishForm) }}
     <button class="btn btn-primary btn-sm" type="submit">Modifier</button>
     {{ form_end(wishForm) }}

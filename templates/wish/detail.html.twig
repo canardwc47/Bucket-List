@@ -9,7 +9,10 @@
 {#            le filtre nl2br convertit les sauts de ligne du texte en balises <br>#}
             <p class="card-text">Description : {{ wish.description | nl2br }}</p>
             <p class="wish-credit">Creer par : {{ wish.author }} on {{ wish.dateCreated | date('Y-m-d')}}</p>
+            <p class="wish-category">Catégorie : {{ wish.category.name }}</p>
 
+            <a class="link_button" href="{{ path('wishes_wish_edit', {'id': wish.id}) }}">Modify</a>
+            <a onclick="return confirm('Are you sure you want to delete this wish?')" class="link_button" href="{{ path('wishes_wish_delete', {'id': wish.id}) }}">Delete</a>
         </div>
     </div>
 

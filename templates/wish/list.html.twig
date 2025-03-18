@@ -8,10 +8,14 @@
         {% for wish in wishes %}
             <li>
                 <article>
-                    <a href="{{ path('wishes_wish_detail', {'id': wish.id}) }}"
-                       title="View this wish in details">{{ wish.title }}</a>
-                    <a href="{{ path('wishes_wish_edit', {'id': wish.id}) }}"
-                       title="Edit this wish">Edit</a>
+                    <a href="{{ path('wishes_wish_detail', {'id': wish.id}) }}" title="View this wish in details">
+                        {{ wish.title }}
+                    </a>
+                    {% if wish.category.id != 0 %}
+                        <p>Catégorie : {{ wish.category.name }}</p>
+                    {% else %}
+                        <p>Aucune catégorie associée</p>
+                    {% endif %}
                 </article>
             </li>
         {% else %}

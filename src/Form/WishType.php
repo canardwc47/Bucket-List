@@ -32,6 +32,9 @@ class WishType extends AbstractType
             ->add('dateCreated', null, [
                 'widget' => 'single_text',
             ])
+            ->add('category', null, [
+                'choice_label' => 'name',
+            ])
 //            ->add('dateUpdated', null, [
 //                'widget' => 'single_text',
 //            ])
